@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="./style/reset.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style/typography.css" />
+  <link rel="stylesheet" href="./style/style.css" />
+  <title>To Do List Using javaScript</title>
+</head>
+
+<body onload="loadFromLocalStorage()">
+  <div class="container">
+    <div class="background-image">
+      <img src="./images/bg.svg" alt="background image" />
+    </div>
+    <div class="background-image-mobile">
+      <img src="./images/bg-mobile.svg" alt="background image" />
+    </div>
+    <div class="to-do-container">
+      <div class="date-time">
+        <div class="date">
+          <!-- Code injected by JavaScript -->
+        </div>
+        <div class="time">
+          <!-- Code injected by JavaScript -->
+        </div>
+      </div>
+      <h1>To Do List</h1>
+      <div class="no-task">
+        <div class="emoji">¯\_(ツ)_/¯</div>
+        <p class="no-task-content">No tasks Yet</p>
+        <p class="no-task-content">
+          press <span class="plus-sign">+</span> to add new tasks
+        </p>
+      </div>
+      <div class="tasks-part">
+        <div class="task-input">
+          <button class="btn close-btn" id="close-btn">
+            <svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
+              <g id="SVGRepo_iconCarrier">
+                <g id="Free-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <g transform="translate(-157.000000, -158.000000)" id="Group" stroke="#000000" stroke-width="2">
+                    <g transform="translate(153.000000, 154.000000)" id="Shape">
+                      <path d="M19,5 L5,19 M19,19 L5,5"></path>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </button>
+          <h2>Add a new task</h2>
+          <form class="add-task-form">
+            <input type="text" class="task-input-title" placeholder="Task Title" autocomplete="off" />
+            <textarea type="text" class="task-input-details" placeholder="Task Details..." rows="10"
+              autocomplete="off"></textarea>
+            <div class="buttons">
+              <button type="submit" class="btn submit-btn">
+                Add to list
+              </button>
+              <button type="button" class="btn cancel-btn" id="cancel-new-btn">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="edit-task-input">
+          <!-- Code injected by JavaScript -->
+        </div>
+
+        <div class="tasks-list">
+          <!-- Code injected by Javascript -->
+        </div>
+        <button type="button" class="btn add-btn">
+          <img src="./images/add-btn.svg" alt="add button" />
+        </button>
+      </div>
+      <div class="card-modal"></div>
+      <div class="author">
+        Coded by
+        <a href="https://github.com/hechadielhassania" target="_blank">El Hassania Hechadi</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script/script.js"></script>
+</body>
+
+</html>

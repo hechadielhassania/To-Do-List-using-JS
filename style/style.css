@@ -1,0 +1,424 @@
+:root {
+  --purple: #daafff;
+  --light-purple: #ebd0ff;
+  --dark-purple: #b43c6b;
+  --yellow: #fbefd3;
+  --light-yellow: #fdfdbd;
+  --light-red: #ff8787;
+}
+/* SCROLL BARR STYLE */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+html {
+  height: 100%;
+}
+body {
+  overflow: hidden;
+}
+
+.card-modal {
+  display: none;
+  min-height: 200px;
+  padding: 8px 16px;
+  border-radius: 0 16px;
+  width: 100%;
+  position: absolute;
+  top: 125px;
+  background-color: #ff8787;
+  box-shadow: 3px 3px 5px black, -2px -2px 5px gray;
+}
+.container {
+  max-width: 800px;
+  position: relative;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.background-image {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.background-image-mobile {
+  display: none;
+}
+
+.date-time {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+}
+.date,
+.time {
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.to-do-container {
+  height: 620px;
+  width: 312px;
+  position: absolute;
+  top: 94px;
+  left: 236px;
+  /* background-color: aqua; */
+}
+h1 {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 28px;
+  color: var(--dark-purple);
+}
+.btn {
+  background: transparent;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  /* width: 50px;
+  height: 50px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 200ms ease-in-out;
+  border-radius: 16px;
+  padding: 8px;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.add-btn {
+  border-radius: 100%;
+  padding: 0;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.btn img {
+  width: 50px;
+  height: 50px;
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+}
+.task-input,
+.edit-task-input {
+  padding: 8px 8px 16px 8px;
+  border-radius: 8px;
+  z-index: 10;
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  top: 110px;
+  display: none;
+  box-shadow: 1px 2px 2px 1px gray, -2px -1px 2px 1px gray;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 16px 0;
+}
+.add-task-form,
+.edit-task-form {
+  display: grid;
+  gap: 16px;
+}
+
+.task-input-details,
+.task-input-title,
+.edit-task-input-title,
+.edit-task-input-details {
+  width: 100%;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid gray;
+  text-transform: capitalize;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline-color: var(--dark-purple);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  justify-items: center;
+}
+
+.submit-btn {
+  background-color: var(--dark-purple);
+  color: var(--yellow);
+  width: 80%;
+  margin: 0 auto;
+}
+.save-edit-btn {
+  background-color: var(--yellow);
+  color: var(--dark-purple);
+  width: 80%;
+}
+
+.cancel-btn {
+  color: white;
+  background-color: #ff8787;
+  width: 80%;
+}
+
+.close-modal-btn {
+  top: 10px;
+}
+.close-btn {
+  position: absolute;
+  right: 10px;
+  opacity: 0.8;
+}
+
+.close-btn svg {
+  height: 10px;
+  width: 10px;
+}
+.tasks-list {
+  margin-top: 12px;
+}
+
+.tasks {
+  padding: 2px 8px;
+  position: fixed;
+  /* top: 125px; */
+  overflow-y: auto;
+  width: 312px;
+  height: 470px;
+}
+
+.checked {
+  display: none;
+}
+
+.task-card {
+  margin-bottom: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px gray;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 8px;
+  height: 100px;
+  background-color: var(--light-yellow);
+  /* cursor: pointer; */
+}
+
+.task-card:nth-child(even) {
+  background-color: var(--light-purple);
+}
+
+h5 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.modal-area {
+  cursor: pointer;
+}
+.card-details {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  height: 30px;
+  font-size: 14px;
+  opacity: 0.8;
+  word-break: break-all;
+}
+
+.check-box {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+}
+
+.no-task {
+  gap: 16px;
+  height: 60%;
+  opacity: 0.6;
+  display: flex;
+  font-weight: 600;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.emoji {
+  font-size: 24px;
+}
+
+.no-task-content {
+  font-size: 18px;
+}
+
+.plus-sign {
+  color: var(--dark-purple);
+  font-size: 28px;
+  padding: 0px 5px;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 2px;
+  opacity: 0.5;
+}
+.author {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  font-size: 12px;
+}
+.author a {
+  color: var(--dark-purple);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.author a:hover {
+  border-bottom: 1px solid var(--dark-purple);
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    max-width: 480px;
+  }
+  .background-image {
+    display: none;
+  }
+  .background-image-mobile {
+    display: block;
+  }
+  .to-do-container {
+    height: 558px;
+    width: 280px;
+    top: 87px;
+    left: 82px;
+  }
+  .tasks {
+    width: 280px;
+    height: 423px;
+    top: 158px;
+  }
+  .btn svg {
+    height: 15px;
+    width: 15px;
+  }
+  .author {
+    bottom: 4px;
+    left: 73px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    margin-top: 40px;
+    max-width: 370px;
+  }
+  .card-modal {
+    width: 90%;
+    left: 10px;
+  }
+
+  .to-do-container {
+    height: 558px;
+    width: 280px;
+    position: absolute;
+    top: 87px;
+    left: 82px;
+    background-color: transparent;
+  }
+  .to-do-container {
+    height: 431px;
+    width: 225px;
+    top: 67px;
+    left: 58px;
+  }
+  .date-time {
+    width: 90%;
+    font-size: 12px;
+  }
+
+  .time,
+  .date {
+    width: 65px;
+    justify-content: center;
+  }
+  .author {
+    font-size: 10px;
+    left: 55px;
+  }
+  .tasks {
+    width: 225px;
+    height: 302px;
+    top: 175px;
+  }
+
+  .task-card {
+    height: 90px;
+  }
+
+  .task-input,
+  .edit-task-input {
+    top: 24px;
+    transform: scale(0.9);
+  }
+
+  .card-buttons {
+    margin-top: 0;
+  }
+  .btn {
+    padding: 4px;
+    font-size: 12px;
+  }
+
+  .card-title {
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+  .check-box {
+    height: 18px;
+    width: 18px;
+  }
+}
